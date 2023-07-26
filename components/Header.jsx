@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header className="bg-black/90 border-b border-b-slate-700 text-white">
-      <div className="container mx-auto p flex items-center justify-between">
+      <div className="container mx-auto p-4 flex items-center justify-between">
         {/* Logo */}
         <a className="text-2xl font-bold" data-aa-action="aa-link" href="/" tabIndex="0" data-di-id="#logo" data-aa-link-text="Toyota Logo"> 
           <svg xmlns="http://www.w3.org/2000/svg" width="56" height="31">
