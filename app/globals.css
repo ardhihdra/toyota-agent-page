@@ -16,7 +16,15 @@
   }
 }
 
+html,
 body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +32,56 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/*
+.carousel-slider {
+  height: 100%;
+}
+
+.carousel .slider-wrapper {
+  height: 100%;
+}
+
+.slider {
+  height: 100%;
+}
+*/
+
+.carousel-image > img {
+  height: 700px;
+  width: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+.carousel-image > video {
+  margin: auto;
+}
+
+.carousel .control-dots {
+  bottom: 20px;
+}
+
+/* carousel.css (or create a new CSS file for this purpose) */
+.sales-profile-container {
+  background-image: url("/images/cars.avif"); /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.list-inside > li {
+  list-style-type: "\2713"; /* Checkmark Unicode character */
+  margin-left: 10px;
+  padding-left: 10px;
+  list-style-position: outside;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+.footer-ul {
+  color: rgb(161 161 170);
 }
