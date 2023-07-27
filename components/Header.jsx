@@ -17,19 +17,21 @@ const Header = () => {
         </a>
         {/* Clickable Menu */}
         <nav className="space-x-2 sm:space-x-12">
-          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Profile</a>
-          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Contact</a>
-          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Gallery</a>
+          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Profil</a>
+          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Kontak</a>
+          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Galeri</a>
         </nav>
 
         {/* Contact Us Button */}
-        <button className="bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors">
+        {/* <button className="gradient-button tracking-wide text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors"> */}
+        <button className="bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors hidden md:block">
           <a
-            href="https://api.whatsapp.com/send?phone=123456789" // Replace with your WhatsApp number
-            target="_blank"
+            href="#car-list" // Replace with your WhatsApp number
+            // href="https://api.whatsapp.com/send?phone=123456789" // Replace with your WhatsApp number
+            // target="_blank"
             rel="noopener noreferrer"
           >
-            Contact Us
+            Pesan Sekarang
           </a>
         </button>
       </div>

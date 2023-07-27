@@ -121,7 +121,7 @@ export default function Home() {
       <Footer />
       <a
         href="https://api.whatsapp.com/send?phone=123456789"
-        className="fixed right-10 bottom-10 cursor-pointer"
+        className="animate-bounce fixed right-10 bottom-10 cursor-pointer text-center"
         target='_blank'
         rel='noreferrer'
       >
@@ -131,8 +131,8 @@ export default function Home() {
           height={80}
           alt="contact"
         >
-
         </Image>
+        <p className="font-sans">Tanya Kami</p>
       </a>
     </>
   )

@@ -58,25 +58,28 @@ const ProfileSection = () => {
         Kenapa harus dengan kami?
       </h2>
       <div className="container mx-auto py-8 sm:p-20 gap-10 items-center flex flex-col justify-center">
-        <div className="w-full flex gap-10">
+        <div className="w-full flex flex-wrap gap-10">
           <SceneItem
-            name="Harga terbaik"
+            name="Harga Terbaik"
             src="url('/images/cars.avif')"
-            className="w-full md:w-1/2 h-96"
+            className="flex-1 h-96 mx-4 sm:mx-0"
+            demoUrl="/blog/harga-terbaik"
           />
           <SceneItem
             name="Konsultasi Nyaman"
             src="url('/images/elon-musk.jpeg')"
-            className="w-full md:w-1/2 h-96"
+            className="flex-1 h-96 mx-4 sm:mx-0"
+            demoUrl="/blog/konsultasi-nyaman"
           />
         </div>
         {/* Sales Benefits and Contact List */}
-        <div className="w-full md:w-2/4 md:pl-8 mt-4 md:mt-0">
+        <div className="w-full flex md:w-2/4 md:pl-8 mt-4 md:mt-0">
           {/* List of Benefits */}
           <SceneItem
             name="Promo Menarik"
             src="url('/images/banner3.png')"
-            className="w-full md:w-[620px] h-96"
+            className="w-full md:w-[620px] h-96 mx-4 sm:mx-0"
+            demoUrl="/blog/promo-menarik"
           />
           {/* <div className="mb-4">
             <ul className="list-disc list-inside">
