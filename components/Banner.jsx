@@ -3,10 +3,20 @@
 import React from 'react';
 import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
+import Slider from 'react-slick';
 
 const Banner = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000, // Adjust the speed of auto-scrolling (in milliseconds)
+  };
+
   return (
-    <div className="w-full flex">
+    <div className="w-full">
+      {/* <Slider {...settings}> */}
       <Carousel
         showThumbs={false}
         infiniteLoop={true}
@@ -58,6 +68,7 @@ const Banner = () => {
           />
         </div>
       </Carousel>
+      {/* </Slider> */}
     </div>
   );
 };

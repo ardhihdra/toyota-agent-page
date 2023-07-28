@@ -52,9 +52,9 @@ function SceneItem({
 
 const ProfileSection = () => {
   return (
-    <div>
-    {/* <div className="" style={{ background: 'black, url("/images/cars.avif")', backgroundBlendMode: 'screen'}}> */}
-      <h2 className="mt-16 text-4xl w-full mx-auto text-center font-bold">
+    <div id="why-us" className="bg-stone-200 text-stone-800">
+      {/* <div className="" style={{ background: 'black, url("/images/cars.avif")', backgroundBlendMode: 'screen'}}> */}
+      <h2 className="mt-8 pt-16 text-4xl w-full mx-auto text-center font-bold">
         Kenapa harus dengan kami?
       </h2>
       <div className="container mx-auto py-8 sm:p-20 gap-10 items-center flex flex-col justify-center">
@@ -67,7 +67,7 @@ const ProfileSection = () => {
           />
           <SceneItem
             name="Konsultasi Nyaman"
-            src="url('/images/elon-musk.jpeg')"
+            src="url('/images/rush.jpeg')"
             className="flex-1 h-96 mx-4 sm:mx-0"
             demoUrl="/blog/konsultasi-nyaman"
           />
@@ -77,7 +77,7 @@ const ProfileSection = () => {
           {/* List of Benefits */}
           <SceneItem
             name="Promo Menarik"
-            src="url('/images/banner3.png')"
+            src="url('/images/zenix3.jpeg')"
             className="w-full md:w-[620px] h-96 mx-4 sm:mx-0"
             demoUrl="/blog/promo-menarik"
           />
@@ -89,27 +89,6 @@ const ProfileSection = () => {
               <li>PROMO MENARIK</li>
             </ul>
           </div> */}
-        </div>
-        {/* Contact List */}
-        <div className="mx-auto text-center">
-          <h2 className="text-xl mt-8 mb-4 text-stone-400">Kontak Kami:</h2>
-          <ul className="flex space-x-4">
-            <li>
-              <a href="https://api.whatsapp.com/send?phone=123456789" target="_blank" rel="noopener noreferrer">
-                <Image src="/whatsapp.png" alt="WhatsApp" className="w-12 h-12" width={80} height={80}/>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/your-sales-profile" target="_blank" rel="noopener noreferrer">
-                <Image src="/fb.png" alt="Facebook" className="w-12 h-12 p-1" width={60} height={60}/>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/your_sales_profile" target="_blank" rel="noopener noreferrer">
-                <Image src="/ig.png" alt="Instagram" className="w-12 h-12 p-1" width={60} height={60} />
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </div>

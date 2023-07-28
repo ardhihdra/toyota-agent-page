@@ -9,30 +9,30 @@ const carListData = [
   {
     id: 1,
     image: '/images/banner1.png', // Replace with car image URL
-    name: 'Car Model 1',
-    startingPrice: 25000,
-    transmission: 'Automatic',
+    name: 'NEW AGYA 1.2 G M/T',
+    startingPrice: 175400000,
+    transmission: '-',
   },
   {
     id: 2,
     image: '/images/banner2.png', // Replace with car image URL
-    name: 'Car Model 2',
-    startingPrice: 28000,
-    transmission: 'Manual',
+    name: 'CALYA 1.2 E MT',
+    startingPrice: 170160000,
+    transmission: '-',
   },
   {
     id: 3,
     image: '/images/banner2.png', // Replace with car image URL
-    name: 'Car Model 2',
-    startingPrice: 28000,
-    transmission: 'Manual',
+    name: 'AVANZA 1.5 G M/T',
+    startingPrice: 259250000,
+    transmission: '-',
   },
   {
     id: 4,
     image: '/images/banner2.png', // Replace with car image URL
-    name: 'Car Model 2',
-    startingPrice: 28000,
-    transmission: 'Manual',
+    name: 'VELOZ 1.5 Q CVT TSS',
+    startingPrice: 336550000,
+    transmission: '-',
   },
   // Add more car items as needed
 ];

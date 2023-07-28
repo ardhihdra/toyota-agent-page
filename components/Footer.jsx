@@ -20,16 +20,19 @@ const Footer = () => {
                 <a href="#">Home</a>
               </li>
               <li>
-                <a href="#">About Us</a>
+                <a href="#why-us">About Us</a>
               </li>
               <li>
-                <a href="#">Cars</a>
+                <a href="#car-list">Cars</a>
               </li>
               <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=123456789"
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
@@ -39,13 +42,13 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Latest Post Blog</h3>
             <ul className="footer-ul">
               <li>
-                <a href="#">Post 1</a>
+                <a href="/blog/harga-terbaik">Harga Terbaik</a>
               </li>
               <li>
-                <a href="#">Post 2</a>
+                <a href="/blog/konsultasi-nyaman">Konsultasi Nyaman</a>
               </li>
               <li>
-                <a href="#">Post 3</a>
+                <a href="/blog/promo-menarik">Promo Menarik</a>
               </li>
               {/* Add more latest blog posts as needed */}
             </ul>
@@ -54,8 +57,8 @@ const Footer = () => {
           {/* Contact Us */}
           <div>
             <h3 className="font-bold mb-4">Contact Us</h3>
-            <p className="pb-1 text-zinc-400">Email: info@example.com</p>
-            <p className="pb-1 text-zinc-400">Phone: +1 123-456-7890</p>
+            <p className="pb-1 text-zinc-400">Email: infopromotoyotagarut@gmail.com</p>
+            <p className="pb-1 text-zinc-400"><a href="https://api.whatsapp.com/send?phone=123456789">Phone: +6281324740047</a></p>
             <p className="pb-1 text-zinc-400">Address: 123 Street, City, Country</p>
           </div>
         </div>

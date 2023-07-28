@@ -17,9 +17,9 @@ const Header = () => {
         </a>
         {/* Clickable Menu */}
         <nav className="space-x-2 sm:space-x-12">
-          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Profil</a>
+          <a href="#why-us" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Profil</a>
           <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Kontak</a>
-          <a href="#" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Galeri</a>
+          <a href="#bought-by" className="text-white hover:text-light-blue hover:font-semibold mx-1 duration-300">Galeri</a>
         </nav>
 
         {/* Contact Us Button */}
