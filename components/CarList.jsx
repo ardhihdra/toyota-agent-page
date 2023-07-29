@@ -1,9 +1,11 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
+import { getSanityCarsData } from '@/data/api';
+import { urlForSanityImage } from '@/data/sanity';
 
 const carListData = [
   {
@@ -43,7 +45,14 @@ const CarItem = ({ car }) => {
     <div className="block border hover:border-stone-400 rounded-lg p-4 transition-all">
     {/* <Link href={`/cars/${car.id}`} className="block border hover:border-stone-400 rounded-lg p-4 transition-all"> */}
       <div className="mb-4">
-        <Image src={car.image} alt={car.name} className="w-full h-52 object-cover rounded-lg" width={128} height={128}/>
+        {/* <Image src={car.image || '/toyota.png'} alt={car.name} className="w-full h-52 object-cover rounded-lg" width={128} height={128}/> */}
+        <Image
+          priority={false}
+          src={car.mainImage ? urlForSanityImage(car.mainImage).width(600).height(320).url(): '/toyota.png'}
+          width="600"
+          height="320"
+          alt={car.name}
+        />
       </div>
       <div className="text-center">
         <h3 className="text-lg font-bold mb-2">{car.name}</h3>
@@ -57,6 +66,17 @@ const CarItem = ({ car }) => {
 
 const CarList = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [cars, setCars] = useState(carListData)
+
+
+  useEffect(() => {
+    getSanityCarsData().then(res => {
+      if (res?.length) {
+        setCars(res)
+      }
+    })
+  }, [])
+
   const car = {
     id: 1,
     image: '/images/banner.jpg', // Replace with the car image URL
@@ -82,7 +102,8 @@ const CarList = () => {
     setShowModal({});
   };
 
-  const filteredCars = carListData.filter((car) =>
+  const filtered = !searchQuery ? cars.slice(0, 4): cars
+  const filteredCars = filtered.filter((car) => 
     car.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -101,8 +122,8 @@ const CarList = () => {
         </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {filteredCars.map((car) => (
-          <div key={car.id} onClick={() => handleModalOpen(car)}>
+        {filteredCars.map((car, idx) => (
+          <div key={car._id || idx} onClick={() => handleModalOpen(car)}>
             <CarItem car={car} />
           </div>
         ))}
@@ -116,13 +137,13 @@ const CarModal = ({ showModal, car, handleModalClose }) => {
   return (
     <div>
       {showModal && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 fade-in">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
           <div
             className="fixed top-0 left-0 w-full h-full bg-black opacity-70"
             onClick={handleModalClose}
           />
-          <div className="bg-white rounded-md p-4 z-50">
-            <Image src={car.image} alt={car.name} className="w-full h-64 object-cover mb-4 rounded" width={128} height={128} />
+          <div className="bg-white rounded-md p-4 z-50 fade-in">
+            <Image src={car.image  || '/toyota.png'} alt={car.name} className="w-full h-64 object-cover mb-4 rounded" width={128} height={128} />
             <h2 className="text-xl font-bold mb-2">{car.name}</h2>
             <p>Transmission: {car?.transmission}</p>
             <p>Seats: {car?.seats}</p>

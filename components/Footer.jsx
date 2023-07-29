@@ -27,7 +27,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://api.whatsapp.com/send?phone=123456789"
+                  href="https://api.whatsapp.com/send?phone=6281324740047"
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -58,7 +58,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">Contact Us</h3>
             <p className="pb-1 text-zinc-400">Email: infopromotoyotagarut@gmail.com</p>
-            <p className="pb-1 text-zinc-400"><a href="https://api.whatsapp.com/send?phone=123456789">Phone: +6281324740047</a></p>
+            <p className="pb-1 text-zinc-400"><a href="https://api.whatsapp.com/send?phone=6281324740047">Phone: +6281324740047</a></p>
             <p className="pb-1 text-zinc-400">Address: 123 Street, City, Country</p>
           </div>
         </div>

@@ -53,9 +53,9 @@ const ClientPhotosCarousel = () => {
 
 export default function BoughtBy() {
   return (<>
-    <div>
+    <div className="bg-black">
       {/* <div className="" style={{ background: 'black, url("/images/cars.avif")', backgroundBlendMode: 'screen'}}> */}
-      <h2 id="bought-by" className="mt-16 text-4xl w-full mx-auto text-center font-bold">
+      <h2 id="bought-by" className="text-4xl w-full mx-auto text-center font-bold">
         Agen Terpercaya
       </h2>
       <ClientPhotosCarousel />
@@ -64,7 +64,7 @@ export default function BoughtBy() {
           <h2 className="text-xl mb-4 text-stone-400">Kontak Kami:</h2>
           <ul className="flex space-x-4">
             <li>
-              <a href="https://api.whatsapp.com/send?phone=123456789" target="_blank" rel="noopener noreferrer">
+              <a href="https://api.whatsapp.com/send?phone=6281324740047" target="_blank" rel="noopener noreferrer">
                 <Image src="/whatsapp.png" alt="WhatsApp" className="w-12 h-12" width={80} height={80}/>
               </a>
             </li>

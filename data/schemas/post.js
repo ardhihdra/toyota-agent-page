@@ -63,6 +63,13 @@ export default defineType({
         hotspot: true,
       },
     }),
+    
+    defineField({
+      name: 'cars',
+      title: 'Cars',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'car' } }],
+    }),
     defineField({
       name: 'publishedAt',
       title: 'Date',

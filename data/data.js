@@ -34,10 +34,6 @@ export async function getDetailPost(postId) {
   }
 }
 
-export async function getSanityPostsData() {
-  
-}
-
 export async function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
