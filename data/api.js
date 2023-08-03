@@ -1,6 +1,9 @@
+import { cache } from 'react';
 import sanityClient from './sanity';
 
-export async function getSanityPostsData(slug) {
+export const revalidate = 3600
+
+export const getSanityPostsData = cache(async function(slug) {
   return new Promise((resolve, reject) => {
     sanityClient.fetch(`
       *[_type == "post" && slug.current == $slug][0]{
@@ -17,14 +20,20 @@ export async function getSanityPostsData(slug) {
       resolve(res)
     })
   })
-}
+})
 
-export async function getSanityCarsData(name) {
+export const getSanityCarsData = cache(async function(name) {
   return new Promise((resolve, reject) => {
     sanityClient.fetch(`
-      *[_type == "car"]
+      *[_type == "car"]{
+        name,
+        image,
+        startingPrice,
+        transmission,
+        "post": post->{slug}
+      }
     `).then(res => {
       resolve(res)
     })
   })
-}
+})

@@ -1,6 +1,6 @@
-'use client'
+// 'use client'
 
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 import sanityClient, { urlForSanityImage } from "@/data/sanity"
 import { PortableText } from '@portabletext/react'
 import DateDisplay from "@/components/DateDisplay"
@@ -69,14 +69,8 @@ const ptComponents = {
   },
 }
 
-export default function SanityPost({ slug }) {
-  const [post, setPost] = useState({})
-
-  useEffect(() => {
-    getSanityPostsData(slug).then(res => {
-      setPost(res)
-    })
-  }, [])
+export default async function SanityPost({ slug }) {
+  const post = await getSanityPostsData(slug)
 
   return (
     <div className="container flex my-2 mx-auto md:py-16 md:px-24 gap-20">

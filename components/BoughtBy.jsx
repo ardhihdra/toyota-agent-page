@@ -53,7 +53,7 @@ const ClientPhotosCarousel = () => {
 
 export default function BoughtBy() {
   return (<>
-    <div className="bg-black">
+    <div className="bg-black text-stone-100 py-16">
       {/* <div className="" style={{ background: 'black, url("/images/cars.avif")', backgroundBlendMode: 'screen'}}> */}
       <h2 id="bought-by" className="text-4xl w-full mx-auto text-center font-bold">
         Agen Terpercaya
@@ -61,7 +61,7 @@ export default function BoughtBy() {
       <ClientPhotosCarousel />
       <div className="container mx-auto sm:p-10 gap-10 items-center flex flex-col justify-center">
         <div className="mx-auto text-center">
-          <h2 className="text-xl mb-4 text-stone-400">Kontak Kami:</h2>
+          <h2 id="contact-us" className="text-xl mb-4 text-stone-400">Kontak Kami:</h2>
           <ul className="flex space-x-4">
             <li>
               <a href="https://api.whatsapp.com/send?phone=6281324740047" target="_blank" rel="noopener noreferrer">

@@ -29,7 +29,7 @@ export default function Home() {
           alt="contact"
         >
         </Image>
-        <p className="font-sans">Tanya Kami</p>
+        <p className="font-sans text-stone-100">Tanya Kami</p>
       </a>
     </>
   )
