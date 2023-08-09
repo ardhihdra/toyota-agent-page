@@ -1,7 +1,4 @@
-// 'use client'
-
-// import { useEffect, useState } from "react"
-import sanityClient, { urlForSanityImage } from "@/data/sanity"
+import { urlForSanityImage } from "@/data/sanity"
 import { PortableText } from '@portabletext/react'
 import DateDisplay from "@/components/DateDisplay"
 

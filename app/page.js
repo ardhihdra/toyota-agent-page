@@ -5,13 +5,14 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import ProfileSection from '@/components/ProfileSection'
 import Image from 'next/image'
-
+import BannerCarousel from '@/components/BannerCarousel'
 
 export default function Home() {
+
   return (
     <>
       <Header />
-      <Banner />
+      <BannerCarousel />
       <BoughtBy />
       <ProfileSection />
       <CarList />

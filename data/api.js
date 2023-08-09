@@ -3,6 +3,16 @@ import sanityClient from './sanity';
 
 export const revalidate = 3600
 
+export const getSanityBanners = cache(async function() {
+  return new Promise((resolve, reject) => {
+    sanityClient.fetch(`
+      *[_type == "banner"][0]
+    `).then(res => {
+      resolve(res?.images || [])
+    })
+  })
+})
+
 export const getSanityPostsData = cache(async function(slug) {
   return new Promise((resolve, reject) => {
     sanityClient.fetch(`
