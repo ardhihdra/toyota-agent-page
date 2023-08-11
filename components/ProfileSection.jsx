@@ -54,21 +54,21 @@ const ProfileSection = () => {
   return (
     <div id="why-us" className="bg-stone-200 text-stone-800">
       {/* <div className="" style={{ background: 'black, url("/images/cars.avif")', backgroundBlendMode: 'screen'}}> */}
-      <h2 className="mt-8 pt-16 text-4xl w-full mx-auto text-center font-bold">
+      <h2 className="mt-8 pt-16 text-3xl sm:text-4xl w-full mx-auto text-center font-bold">
         Kenapa harus dengan kami?
       </h2>
       <div className="container mx-auto py-8 sm:p-20 gap-10 items-center flex flex-col justify-center">
-        <div className="w-full flex flex-wrap gap-10">
+        <div className="w-full flex flex-col flex-wrap gap-10 sm:flex-row">
           <SceneItem
             name="Harga Terbaik"
             src="url('/images/cars.avif')"
-            className="flex-1 h-96 mx-4 sm:mx-0"
+            className="sm:flex-1 h-96 mx-4 sm:mx-0"
             demoUrl="/blog/harga-terbaik"
           />
           <SceneItem
             name="Konsultasi Nyaman"
             src="url('/images/rush.jpeg')"
-            className="flex-1 h-96 mx-4 sm:mx-0"
+            className="sm:flex-1 h-96 mx-4 sm:mx-0"
             demoUrl="/blog/konsultasi-nyaman"
           />
         </div>

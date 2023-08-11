@@ -3,6 +3,37 @@ import sanityClient from './sanity';
 
 export const revalidate = 3600
 
+const defaultUrls = [
+  { url: '/', changefreq: 'daily', priority: 1 },
+  { url: '/car', changefreq: 'weekly', priority: 0.5 },
+  { url: '/blog', changefreq: 'weekly', priority: 0.5 },
+]
+
+export async function getSitemapUrls() {
+  const posts = await sanityClient.fetch(`
+    *[_type == "post"]{
+      title,
+      publishedAt,
+      slug
+    }
+  `)
+
+  const urls = posts.map((ps) => ({
+    url: `/car/${ps.slug?.current}`,
+    priority: ps.sitemapPriority || 0.7
+  }))
+  // const blogUrls = blogposts
+  //   .filter(({slug = {}}) => slug.current)
+  //   .map(post => {
+  //     return {
+  //       url: `/blog/${post.slug.current}`,
+  //       priority: 0.5
+  //     }
+  //   })
+
+  return [...defaultUrls, ...urls]
+}
+
 export const getSanityBanners = cache(async function() {
   return new Promise((resolve, reject) => {
     sanityClient.fetch(`

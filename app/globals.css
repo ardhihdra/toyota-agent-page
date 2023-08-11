@@ -49,21 +49,38 @@ body {
 }
 */
 
-.carousel-image > img {
-  height: 720px;
+.carousel-image {
+  background-color: black;
+  max-height: 800px;
   width: 100%;
-  object-fit: cover;
-  object-position: right;
+  object-fit: fill;
+  object-position: center;
+}
+
+.carousel-image > img {
+  max-width: 1440px;
+  object-position: center;
 }
 
 @media (max-width: 640px) {
+  .carousel-image {
+    max-height: 220px;
+  }
+
   .carousel-image > img {
-    height: 300px;
+    object-fit: fill;
+  }
+
+  .carousel-image > video {
+    padding: 4px 0;
   }
 }
 
 .carousel-image > video {
-  margin: auto;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  object-position: center;
 }
 
 .carousel .control-dots {

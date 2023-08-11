@@ -4,13 +4,15 @@ import DateDisplay from "@/components/DateDisplay"
 
 import Image from "next/image"
 import { getSanityPostsData } from "@/data/api"
+import { RelatedMainPosts, RelatedPost } from "./RelatedPost"
 
 const ptComponents = {
   block: {
     // Ex. 1: customizing common block types
-    h1: ({children}) => <h1 className="text-5xl my-5">{children}</h1>,
-    h2: ({children}) => <h1 className="text-4xl my-4">{children}</h1>,
-    h3: ({children}) => <h1 className="text-3xl my-3">{children}</h1>,
+    h1: ({children}) => <h1 className="text-5xl font-bold my-5">{children}</h1>,
+    h2: ({children}) => <h1 className="text-4xl font-bold my-4">{children}</h1>,
+    h3: ({children}) => <h1 className="text-3xl font-bold my-3">{children}</h1>,
+    h4: ({children}) => <h1 className="text-2xl font-bold my-3">{children}</h1>,
     blockquote: ({children}) => <blockquote className="border-l-purple-500">{children}</blockquote>,
 
     // Ex. 2: rendering custom styles
@@ -70,56 +72,66 @@ export default async function SanityPost({ slug }) {
   const post = await getSanityPostsData(slug)
 
   return (
-    <div className="container flex my-2 mx-auto md:py-16 md:px-24 gap-20">
-      <div className="flex-auto w-80">
-        <div className="mb-14 text-xl font-bold text-blue-400">Info Promo Toyota</div>
-        <div className="text-5xl font-bold">{post.title}</div>
-        {
-          post.mainImage &&
-          <div className="my-8"> 
-            <Image priority={false} src={urlForSanityImage(post.mainImage).width(600).height(320).url()} width="600" height="320" alt="main"/>
-          </div>  
-        }
-        <DateDisplay>{new Date(post.publishedAt).toLocaleString()}</DateDisplay>
-        <div className="my-4 text-lg text-justify">
-          <PortableText
-            value={post.body}
-            components={ptComponents}
-          />
-        </div>
-      </div>
-      <div className="flex-auto w-24">
-        <div className="mb-4">
+    <div className="container my-2 mx-auto md:py-16 md:px-24 gap-20">
+      <div className="flex flex-col md:flex-row ">
+        <div className="flex-auto w-80 m-8 sm:m-0">
+          <div className="mb-14 text-xl font-bold text-blue-400">Info Promo Toyota</div>
+          <div className="text-5xl font-bold">{post.title}</div>
           {
-            (post?.categories ? post.categories: []).map((ct, idx) => {
-              return (
-                <div key={idx} className="text-2xl font-bold uppercase">{ct.title}</div>
-              )
-            })
+            post.mainImage &&
+            <div className="my-8"> 
+              <Image priority={false} src={urlForSanityImage(post.mainImage).width(600).height(320).url()} width="600" height="320" alt="main"/>
+            </div>  
           }
-          <div className="font-bold text-gray-500">
-            {post?.cars ? post.cars.length: 0} Tipe
+          <DateDisplay>{new Date(post.publishedAt).toLocaleString()}</DateDisplay>
+          <div className="my-4 text-lg text-justify">
+            <PortableText
+              value={post.body}
+              components={ptComponents}
+            />
           </div>
         </div>
-        <div className="bg-black text-gray-400 text-sm p-8">
-          <ul>
-            <li className="flex gap-20 space-x-10 mb-2 pb-2 border-b border-gray-700">
-              <div className="w-52">Tipe</div>
-              <div>Harga</div>
-            </li>
-            {
-              (post?.cars ? post?.cars: []).map(cr => {
-                return (
-                  <li key={cr._id} className="flex gap-20 space-x-10 mb-2 pb-2 border-b border-gray-700">
-                    <div className="w-52">{cr.name}</div>
-                    <div>Rp. {new Intl.NumberFormat('id').format(cr.price || 0)}</div>
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
+        {
+          post?.cars ?
+          <div className="flex-auto sm:w-24">
+            <div className="m-8 sm:m-0 mb-4">
+              {
+                (post?.categories ? post.categories: []).map((ct, idx) => {
+                  return (
+                    <div key={idx} className="text-2xl font-bold uppercase">{ct.title}</div>
+                  )
+                })
+              }
+              <div className="font-bold text-gray-500">
+                {post?.cars ? post.cars.length: 0} Tipe
+              </div>
+            </div>
+            <div className="bg-black text-gray-400 text-sm p-8">
+              <ul>
+                <li className="flex gap-20 space-x-10 mb-2 pb-2 border-b border-gray-700">
+                  <div className="w-52">Tipe</div>
+                  <div>Harga</div>
+                </li>
+                {
+                  (post?.cars ? post?.cars: []).map(cr => {
+                    return (
+                      <li key={cr._id} className="flex gap-20 space-x-10 mb-2 pb-2 border-b border-gray-700">
+                        <div className="w-52">{cr.name}</div>
+                        <div>Rp. {new Intl.NumberFormat('id').format(cr.price || 0)}</div>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </div>
+          :
+          ''
+        }
       </div>
+      
+      {/* Related Post Section */}
+      <RelatedMainPosts />
     </div>
   )
 }

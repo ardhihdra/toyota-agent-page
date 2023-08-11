@@ -3,19 +3,19 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 // Import css files for react scick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Toyota Garut',
-  description: 'Info Promo Toyota Garut',
+  title: 'Mobil Toyota Promo Terbaru di Garut - Diskon Menarik!',
+  description: 'Dapatkan mobil Toyota dengan diskon istimewa di Garut, Jawa Barat. Penawaran terbatas, segera hubungi kami!',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

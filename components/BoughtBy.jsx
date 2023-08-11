@@ -55,7 +55,7 @@ export default function BoughtBy() {
   return (<>
     <div className="bg-black text-stone-100 py-16">
       {/* <div className="" style={{ background: 'black, url("/images/cars.avif")', backgroundBlendMode: 'screen'}}> */}
-      <h2 id="bought-by" className="text-4xl w-full mx-auto text-center font-bold">
+      <h2 id="bought-by" className="text-3xl sm:text-4xl w-full mx-auto text-center font-bold">
         Agen Terpercaya
       </h2>
       <ClientPhotosCarousel />
