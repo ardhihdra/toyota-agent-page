@@ -29,7 +29,7 @@ export default function MainArticle({ post }) {
       <div className="mb-14 text-xl font-bold text-blue-400">Promo Toyota Garut</div>
       <div className="text-5xl font-bold">{post?.title}</div>
         {/* Share Buttons */}
-      <ShareArticle url={`/blog/${post.slug}`}/>
+      <ShareArticle url={`/blog/${post?.slug}`}/>
       {
         post?.image && <Image src={post?.image} alt="main"/>
       }
