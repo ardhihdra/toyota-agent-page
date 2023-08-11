@@ -71,8 +71,10 @@ const ptComponents = {
 export default async function SanityPost({ slug }) {
   const post = await getSanityPostsData(slug)
 
+  const mainClass = `container my-2 mx-auto md:py-16 ${!post?.cars ? 'lg:w-[820px]': ''} md:px-24 gap-20"`
+
   return (
-    <div className="container my-2 mx-auto md:py-16 md:px-24 gap-20">
+    <div className={mainClass}>
       <div className="flex flex-col md:flex-row ">
         <div className="flex-auto w-80 m-8 sm:m-0">
           <div className="mb-14 text-xl font-bold text-blue-400">Info Promo Toyota</div>

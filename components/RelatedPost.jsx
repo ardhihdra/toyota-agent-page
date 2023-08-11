@@ -20,7 +20,7 @@ export const RelatedMainPosts = () => {
   return (
     <>
       {/* Related Post Section */}
-      <div className="container mt-8 max-w-sm sm:max-w-lg">
+      <div className="container mt-8 max-w-sm sm:max-w-lg pl-8 sm:pl-0">
         <h2 className="text-2xl font-bold mb-4 border-b pb-4 border-stone-500">Artikel Terkait</h2>
         <div className="flex flex-wrap -mx-4">
           <RelatedPost title="Harga Terbaik" date="16 Juli, 2023"/>
