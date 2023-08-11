@@ -16,6 +16,7 @@ import categoryType from '@/data/schemas/category'
 import carType from '@/data/schemas/car'
 import postType from '@/data/schemas/post'
 import bannerType from '@/data/schemas/banner'
+import buyerType from '@/data/schemas/buyer'
 import settingsType from '@/data/schemas/settings'
 
 const title =
@@ -28,7 +29,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, postType, settingsType, categoryType, carType, blockContent, bannerType],
+    types: [authorType, postType, settingsType, categoryType, carType, blockContent, bannerType, buyerType],
   },
   plugins: [
     deskTool({

@@ -16,15 +16,15 @@ const Header = () => {
           <Image alt="logo" src="/toyota.png" width={90} height={90} />
         </a>
         {/* Clickable Menu */}
-        <nav className="space-x-2 sm:space-x-12 font-semibold">
-          <a href="#why-us" className="text-white hover:text-light-blue hover:text-blue-500 mx-1 duration-300">Profil</a>
-          <a href="#contact-us" className="text-white hover:text-light-blue hover:text-blue-500 mx-1 duration-300">Kontak</a>
+        <nav className="space-x-4 sm:space-x-12 font-semibold">
+          <a href="#bought-by" className="text-white hover:text-light-blue hover:text-blue-500 mx-1 duration-300">Profil</a>
+          <a href="/blog/list-harga-mobil-toyota-garut" className="text-white hover:text-light-blue hover:text-blue-500 mx-1 duration-300">Harga</a>
           <a href="#bought-by" className="text-white hover:text-light-blue hover:text-blue-500 mx-1 duration-300">Galeri</a>
         </nav>
 
         {/* Contact Us Button */}
         {/* <button className="gradient-button tracking-wide text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors"> */}
-        <button className="bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors hidden md:block">
+        <button className="bg-blue-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors hidden md:block">
           <a
             href="#car-list" // Replace with your WhatsApp number
             // href="https://api.whatsapp.com/send?phone=6281324740047" // Replace with your WhatsApp number

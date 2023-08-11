@@ -1,8 +1,15 @@
 export default function Button({
   className,
-  children
+  transparent,
+  children,
 }) {
-  return <button className={"bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors " + className}>
-    {children}
-  </button>
+  let classStyle = "text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-light-orange transition-colors "
+  if (!transparent) classStyle += 'bg-green-500 '
+  if (transparent) classStyle += 'border '
+
+  return (
+    <button className={classStyle + className}>
+      {children}
+    </button>
+  )
 }

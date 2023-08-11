@@ -23,13 +23,15 @@ const CarItem = ({ car }) => {
       </div>
       <div className="text-center flex flex-col h-36">
         <div className="grow">
+          <p className="relative bottom-4 text-sm rounded-xl bg-blue-500 py-1 px-2 w-fit mx-auto text-white">
+            Rp {new Intl.NumberFormat('id').format(car.price || 0)}
+          </p>
           <h3 className="text-lg font-bold mb-2">{car.name}</h3>
-          <p className="text-sm">Starting Price: Rp {new Intl.NumberFormat('id').format(car.price || 0)}</p>
         </div>
         {/* <p>Transmission: {car.transmission}</p> */}
         <div className="flex-none grow-0">
           <Link href={car.post ? `/car/${car.post.slug.current}`: '/'}>
-            <Button className="m-2 bg-blue-400">Lihat Detail</Button>
+            <Button transparent className="m-2 !text-blue-400 border-blue-400">Lihat Detail</Button>
           </Link>
           <Button className="m-2">Tanya</Button>
         </div>

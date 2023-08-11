@@ -59,13 +59,15 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Contact Us</h3>
             <p className="pb-1 text-zinc-400">Email: infopromotoyotagarut@gmail.com</p>
             <p className="pb-1 text-zinc-400"><a href="https://api.whatsapp.com/send?phone=6281324740047">Phone: +6281324740047</a></p>
-            <p className="pb-1 text-zinc-400">Address: 123 Street, City, Country</p>
+            <p className="pb-1 text-zinc-400">Address: Jl Cimanuk No 303 Garut</p>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="text-center mt-16">
-          <p className="text-sm">&copy; {new Date().getFullYear()} Kaizeni. All rights reserved.</p>
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} <a href="https://www.kaizeni.tech" alt="kreator kaizeni" target="_blank" rel="noreferrer">Kaizeni. All rights reserved.</a>
+          </p>
         </div>
       </div>
     </footer>

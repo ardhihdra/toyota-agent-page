@@ -1,11 +1,9 @@
-import { PlayIcon } from '@sanity/icons'
+import { ActivityIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
-import authorType from './author'
-
 /**
- * This file is the schema definition for a post.
+ * This file is the schema definition for a buyer.
  *
  * Here you'll be able to edit the different fields that appear when you 
  * create or edit a post in the studio.
@@ -17,9 +15,9 @@ import authorType from './author'
  */
 
 export default defineType({
-  name: 'car',
-  title: 'Car',
-  icon: PlayIcon,
+  name: 'buyer',
+  title: 'Buyer',
+  icon: ActivityIcon,
   type: 'document',
   fields: [
     defineField({
@@ -29,21 +27,9 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'price',
-      title: 'Price (Rp)',
-      type: 'number',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'dp',
-      title: 'Minimum Down Payment (DP) (Rp)',
-      type: 'number',
-    }),
-    defineField({
-      name: 'specification',
-      title: 'Specification',
-      type: 'array',
-      of: [{type: 'string'}],
+      name: 'testimonial',
+      title: 'Testimoni',
+      type: 'text',
     }),
     defineField({
       name: 'mainImage',
@@ -59,12 +45,13 @@ export default defineType({
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
     }),
-    defineField({
-      name: 'post',
-      title: 'Post',
-      type: 'reference',
-      to: [{ type: 'post' }],
-      validation: (rule) => rule.required(),
-    }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+    prepare({ title }) {
+      return { title }
+    },
+  },
 })

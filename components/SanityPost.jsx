@@ -5,6 +5,7 @@ import DateDisplay from "@/components/DateDisplay"
 import Image from "next/image"
 import { getSanityPostsData } from "@/data/api"
 import { RelatedMainPosts, RelatedPost } from "./RelatedPost"
+import { AskWhatsapp } from "./Floating"
 
 const ptComponents = {
   block: {
@@ -36,7 +37,7 @@ const ptComponents = {
           <Image
             alt={value.alt || ' '}
             loading="lazy"
-            src={urlForSanityImage(value).width(320).height(240).fit('max').auto('format')}
+            src={urlForSanityImage(value).fit('max').auto('format').url()}
             width={320}
             height={240}
           />
@@ -78,17 +79,17 @@ export default async function SanityPost({ slug }) {
       <div className="flex flex-col md:flex-row ">
         <div className="flex-auto w-80 m-8 sm:m-0">
           <div className="mb-14 text-xl font-bold text-blue-400">Info Promo Toyota</div>
-          <div className="text-5xl font-bold">{post.title}</div>
+          <div className="text-5xl font-bold">{post?.title}</div>
           {
-            post.mainImage &&
+            post?.mainImage &&
             <div className="my-8"> 
-              <Image priority={false} src={urlForSanityImage(post.mainImage).width(600).height(320).url()} width="600" height="320" alt="main"/>
+              <Image priority={false} src={urlForSanityImage(post?.mainImage).width(600).height(320).url()} width="600" height="320" alt="main"/>
             </div>  
           }
-          <DateDisplay>{new Date(post.publishedAt).toLocaleString()}</DateDisplay>
+          <DateDisplay>{new Date(post?.publishedAt).toLocaleString()}</DateDisplay>
           <div className="my-4 text-lg text-justify">
             <PortableText
-              value={post.body}
+              value={post?.body}
               components={ptComponents}
             />
           </div>
@@ -134,6 +135,7 @@ export default async function SanityPost({ slug }) {
       
       {/* Related Post Section */}
       <RelatedMainPosts />
+      <AskWhatsapp />
     </div>
   )
 }

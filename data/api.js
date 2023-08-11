@@ -9,6 +9,19 @@ const defaultUrls = [
   { url: '/blog', changefreq: 'weekly', priority: 0.5 },
 ]
 
+export async function getBoughtBy(limit=0) {
+  return new Promise((resolve, reject) => {
+    let query = '*[_type == "buyer"]'
+    if (limit) query += `[0...${limit}]`
+    query += '| order(_createdAt desc)'
+    sanityClient.fetch(`
+      ${query}
+    `).then(res => {
+      resolve(res || [])
+    })
+  })
+}
+
 export async function getSitemapUrls() {
   const posts = await sanityClient.fetch(`
     *[_type == "post"]{
@@ -68,8 +81,8 @@ export const getSanityCarsData = cache(async function(name) {
     sanityClient.fetch(`
       *[_type == "car"]{
         name,
-        image,
-        startingPrice,
+        mainImage,
+        price,
         transmission,
         "post": post->{slug}
       }
